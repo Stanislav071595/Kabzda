@@ -4,10 +4,12 @@ import Rating from "./components/Rating/Rating";
 import React from "react";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledAccordion} from "./components/Accordion/UncontrolledAccordion";
+import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
+
 
 const App = () => {
     return (
-        <div>
+        <div className={"App"}>
             {/*<PageTitle title={"This is APP component"}/>
         <PageTitle title={"My friends"}/>
         <Rating value={3}/>*/}
@@ -22,6 +24,10 @@ const App = () => {
             <OnOff />
             <UncontrolledAccordion titleValue={"Menu"} />
             <UncontrolledAccordion titleValue={"Users"} />
+
+            <UncontrolledRating/>
+
+
 
         </div>
     );
