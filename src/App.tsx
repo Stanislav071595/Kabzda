@@ -1,24 +1,27 @@
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
-import Star from "./components/Star/Star";
+import Rating from "./components/Rating/Rating";
 import React from "react";
 import {OnOff} from "./components/OnOff/OnOff";
+import {UncontrolledAccordion} from "./components/Accordion/UncontrolledAccordion";
 
 const App = () => {
     return (
         <div>
             {/*<PageTitle title={"This is APP component"}/>
         <PageTitle title={"My friends"}/>
-        <Star value={3}/>*/}
-            <Accordion titleValue={"Menu"} collapsed={true}/>
+        <Rating value={3}/>*/}
+{/*            <Accordion titleValue={"Menu"} collapsed={true}/>
             <Accordion titleValue={"Users"} collapsed={false}/>
-            <Star value={0}/>
-            <Star value={1}/>
-            <Star value={2}/>
-            <Star value={3}/>
-            <Star value={4}/>
-            <Star value={5}/>
-            <OnOff value={false}/>
+            <Rating value={0}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Rating value={5}/>*/}
+            <OnOff />
+            <UncontrolledAccordion titleValue={"Menu"} />
+            <UncontrolledAccordion titleValue={"Users"} />
 
         </div>
     );

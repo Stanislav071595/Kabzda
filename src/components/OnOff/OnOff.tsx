@@ -1,40 +1,40 @@
-import React from 'react'
-import s from './OnOff.module.css'
+import React, {MouseEventHandler, useState} from 'react'
+
 
 type OnOffType = {
-    value: boolean
+    /*value: boolean*/
 }
 
 export const OnOff = (props: OnOffType) => {
+
+    let [on, setOn] = useState(false)
+
+
+    const onStyle = {
+        backgroundColor: on ? "green" : "white"
+    }
+    const offStyle = {
+        backgroundColor: on ? "white" : "red"
+    }
+    const indicatorStyle = {
+        width: "10px",
+        height: "10px",
+        borderRadius: "5px",
+        border: "1px solid black",
+        display: "inline-block",
+        marginLeft: "5px",
+        backgroundColor: on ? "green" : "red"
+    }
+
+
     return (
         <div>
-            <OnOffCliker selected={props.value} />
+            <button style={onStyle} onClick={ () => setOn(true) }>On</button>
+            <button style={offStyle} onClick={ () => setOn(false) }>Off</button>
+            <div style={indicatorStyle}></div>
         </div>
     )
 }
 
 
-type OnOffClikerType = {
-    selected: boolean
-}
 
-const OnOffCliker = (props: OnOffClikerType) => {
-        if (props.selected === true) {
-            return (
-                <div>
-                    <button className={s.buttonOn}>On</button>
-                    <button>Off</button>
-                    <input type={"checkbox"} checked={true}/>
-                </div>
-            )
-        } else {
-            return(
-                <div>
-                    <button>On</button>
-                    <button className={s.buttonOff}>Off</button>
-                    <input type={"checkbox"}/>
-                </div>
-
-            )
-        }
-}
